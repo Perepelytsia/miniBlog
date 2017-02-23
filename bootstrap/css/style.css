@@ -1,0 +1,24 @@
+.masthead {
+	position: static;
+}
+.grey-style {
+	background-color:#ccc
+}
+.padd-tp {
+	padding-top: 10px;
+}
+.padd-tp p {
+	margin-bottom:0;
+}
+.padd-tp p a{
+	color: #338ab7;
+}
+.size-19 {
+	font-size:19 px;
+}
+.padd-tp40 {
+	padding-top: 40px;
+}
+.padd-tp40 a{
+	color: #ddd
+}
