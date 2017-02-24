@@ -28,11 +28,11 @@ class MessageController extends Controller
 	public function actionAdd()
 	{
 		$url_page='/message/'.$_POST['mess_id'];
-		if (empty($_POST['comment']) or empty($_POST['user']))
+		if (empty(trim($_POST['comment'])) or empty(trim($_POST['user'])))
 		{
 			header("Location: $url_page");
 		} else {
-			$this->result = $this->model->addComment($_POST['mess_id'], $_POST['comment'], $_POST['user']);
+			$this->result = $this->model->addComment(trim($_POST['mess_id']), trim($_POST['comment']), trim($_POST['user']));
 			if ($this->result) {
 				header("Location: $url_page");
 			} else {

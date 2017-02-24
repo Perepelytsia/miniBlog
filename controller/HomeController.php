@@ -20,11 +20,11 @@ class HomeController extends Controller
 
 	public function actionAdd()
 	{
-		if (empty($_POST['message']) or empty($_POST['author']))
+		if (empty(trim($_POST['message'])) or empty(trim($_POST['author'])))
 		{
 			header("Location: /");
 		} else {
-			$this->result = $this->model->addMessage($_POST['message'], $_POST['author']);
+			$this->result = $this->model->addMessage(trim($_POST['message']), trim($_POST['author']));
 			if ($this->result) {
 				header("Location: /");
 			} else {
