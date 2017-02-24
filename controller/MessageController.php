@@ -32,7 +32,7 @@ class MessageController extends Controller
 		{
 			header("Location: $url_page");
 		} else {
-			$this->result = $this->model->addComment(trim($_POST['mess_id']), trim($_POST['comment']), trim($_POST['user']));
+			$this->result = $this->model->addComment(htmlspecialchars(trim($_POST['mess_id'])), htmlspecialchars(trim($_POST['comment'])), htmlspecialchars(trim($_POST['user'])));
 			if ($this->result) {
 				header("Location: $url_page");
 			} else {

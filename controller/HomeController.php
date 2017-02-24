@@ -24,7 +24,7 @@ class HomeController extends Controller
 		{
 			header("Location: /");
 		} else {
-			$this->result = $this->model->addMessage(trim($_POST['message']), trim($_POST['author']));
+			$this->result = $this->model->addMessage(htmlspecialchars(trim($_POST['message'])), htmlspecialchars(trim($_POST['author'])));
 			if ($this->result) {
 				header("Location: /");
 			} else {
